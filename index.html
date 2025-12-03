@@ -89,6 +89,7 @@
       background: var(--accent-soft);
     }
 
+    /* 안내장/사업소개서 다운로드 카드 */
     .download-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -120,6 +121,7 @@
       font-weight: 600;
     }
 
+    /* 히어로 */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
@@ -270,7 +272,7 @@
       margin-bottom: 28px;
     }
     .section-title {
-      font-size: 1.15rem;
+      font-size: 1.25rem; /* 가독성↑ */
       font-weight: 700;
       margin-bottom: 10px;
       display: flex;
@@ -350,6 +352,7 @@
       color: var(--text-sub);
     }
 
+    /* FAQ */
     .faq {
       background: var(--card-bg);
       border-radius: 18px;
@@ -365,7 +368,7 @@
       border-bottom: none;
     }
     .faq-question {
-      font-size: 1rem;
+      font-size: 1.05rem; /* 질문 글씨 조금 키움 */
       font-weight: 700;
       margin-bottom: 3px;
     }
@@ -374,26 +377,52 @@
       color: var(--text-sub);
     }
 
+    /* 포스터 섹션 공통 */
     .poster-section {
       background: var(--card-bg);
       border-radius: 18px;
       border: 1px solid var(--border-soft);
       padding: 14px 14px 16px;
     }
-    .poster-wrapper {
+    .poster-note {
+      font-size: 0.8rem;
+      color: var(--text-sub);
       margin-top: 8px;
+    }
+
+    /* 포스터 + 카드뉴스를 세로 카드 2장처럼 쌓는 구조 */
+    .poster-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .poster-card-block {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      padding: 12px 14px 14px;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+    }
+    .poster-card-block h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+    .poster-card-block p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+    .poster-image-box {
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border-soft);
     }
-    .poster-wrapper img {
+    .poster-image-box img {
       width: 100%;
       display: block;
-    }
-    .poster-note {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      margin-top: 6px;
     }
 
     footer {
@@ -424,6 +453,7 @@
 </head>
 <body>
   <div class="page">
+    <!-- 상단 헤더 -->
     <header>
       <div>
         <div class="title">AI머신비전융합인재양성과정 6기 모집 랜딩페이지</div>
@@ -439,6 +469,7 @@
       </div>
     </header>
 
+    <!-- 안내장 / 사업소개서 다운로드 -->
     <div class="download-row">
       <div class="download-card">
         <div class="download-label">훈련 안내 문서</div>
@@ -452,6 +483,7 @@
       </div>
     </div>
 
+    <!-- 히어로 섹션 -->
     <section class="hero">
       <div class="hero-left">
         <div class="kdt-label">
@@ -471,7 +503,7 @@
           <div class="hero-badge">전액 국비지원</div>
           <div class="hero-badge">월 최대 81만원 훈련수당(국취참여시)</div>
           <div class="hero-badge">머신비전 H/W + C# S/W + 딥러닝</div>
-          <div class="hero-badge">현장 프로젝트 & OJT</div>
+          <div class="hero-badge">현장 프로젝트 &amp; OJT</div>
         </div>
         <ul class="hero-list">
           <li><strong>훈련기간</strong> : 2025.12.30. ~ 2026.05.07. (총 544시간, 월~금 10:00~17:00)</li>
@@ -502,17 +534,20 @@
             <img src="card-6th-thumb.jpg" alt="AI머신비전융합인재양성과정 6기 카드뉴스 썸네일" />
           </div>
           <div class="thumb-caption">
-            온·오프라인 홍보에 사용 중인 카드뉴스 포스터를 랜딩페이지에서도 한눈에 볼 수 있도록 구성했습니다.
+            온·오프라인 홍보에 사용 중인 카드뉴스 이미지를 랜딩페이지에서도
+            한눈에 볼 수 있도록 배치했습니다.
           </div>
         </div>
 
         <div class="poster-link-card">
           <strong>6기 모집 포스터 미리보기</strong><br />
-          온·오프라인 홍보에 사용 중인 전체 포스터는 아래 “6기 모집 포스터 보기” 섹션에서 크게 확인할 수 있습니다.
+          아래 “6기 홍보 포스터 &amp; 카드뉴스” 섹션에서
+          실제 사용 중인 포스터를 크게 확인할 수 있습니다.
         </div>
       </div>
     </section>
 
+    <!-- 이 과정 한눈에 보기 -->
     <section>
       <h2 class="section-title"><span class="dot"></span> 이 과정 한눈에 보기</h2>
       <p class="section-desc">
@@ -546,6 +581,7 @@
       </div>
     </section>
 
+    <!-- 머신비전 소개 -->
     <section>
       <h2 class="section-title"><span class="dot"></span> 머신비전이란?</h2>
       <p class="section-desc">
@@ -578,6 +614,7 @@
       </div>
     </section>
 
+    <!-- 커리큘럼 -->
     <section>
       <h2 class="section-title"><span class="dot"></span> 무엇을 배우나요? (커리큘럼 4개 축)</h2>
       <p class="section-desc">
@@ -623,6 +660,7 @@
       </div>
     </section>
 
+    <!-- 취업 가능 분야 -->
     <section>
       <h2 class="section-title"><span class="dot"></span> 어느 기업 · 직무로 취업하나요?</h2>
       <p class="section-desc">
@@ -650,6 +688,7 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section>
       <h2 class="section-title"><span class="dot"></span> 자주 묻는 질문 (FAQ)</h2>
       <div class="faq">
@@ -690,17 +729,48 @@
       </div>
     </section>
 
+    <!-- 포스터 & 카드뉴스 -->
     <section class="poster-section">
-      <h2 class="section-title"><span class="dot"></span> AI·머신비전 핵심훈련 6기 모집 포스터 보기</h2>
+      <h2 class="section-title">
+        <span class="dot"></span> AI·머신비전 핵심훈련 6기 홍보 포스터 &amp; 카드뉴스
+      </h2>
       <p class="section-desc">
-        온·오프라인 홍보에 사용 중인 공식 포스터를 랜딩페이지에서도 그대로 확인할 수 있도록 구성했습니다.
+        실제 오프라인/온라인 홍보에 사용 중인 이미지를 한눈에 볼 수 있도록 정리했습니다.
+        아래 순서대로 보시면, 훈련의 분위기와 핵심 메시지를 빠르게 파악할 수 있습니다.
       </p>
-      <div class="poster-wrapper">
-        <img src="poster-6th.jpg" alt="AI·머신비전 핵심훈련 무료 취업훈련생 6기 모집 포스터" />
+
+      <div class="poster-stack">
+        <!-- ① 공식 모집 포스터(파란 배경) -->
+        <article class="poster-card-block">
+          <h3>① AI·머신비전 핵심훈련 6기 공식 모집 포스터</h3>
+          <p>
+            전체 모집 일정, 훈련기간(2025.12.30. ~ 2026.05.07.), 대표 취업 직무, 훈련과목 등이
+            한 장에 정리되어 있습니다. 학교 게시판·기관 안내문에 부착하는 메인 포스터입니다.
+          </p>
+          <div class="poster-image-box">
+            <img src="poster-main-6th.jpg"
+                 alt="AI·머신비전 핵심훈련 무료 취업훈련생 6기 모집 공식 포스터" />
+          </div>
+        </article>
+
+        <!-- ② 초록색 카드뉴스 메인 이미지 -->
+        <article class="poster-card-block">
+          <h3>② 취준생 대상 카드뉴스 메인 이미지</h3>
+          <p>
+            “취준생들 주목!” 메시지와 전액 국비지원, 훈련수당, 취업연계 핵심 포인트를 강조한
+            카드뉴스 메인 이미지입니다. 인스타그램, 블로그, 단톡방 공유용으로 활용하기 좋습니다.
+          </p>
+          <div class="poster-image-box">
+            <img src="poster-card-6th.jpg"
+                 alt="취준생들 주목 AI머신비전 융합인재양성과정 카드뉴스 메인 이미지" />
+          </div>
+        </article>
       </div>
+
       <p class="poster-note">
-        ※ 포스터 이미지는 <strong>poster-6th.jpg</strong> 파일명으로 랜딩페이지 HTML과 같은 폴더에 두시면
-        위와 같이 표시됩니다.
+        ※ 이미지 파일명을 <strong>poster-main-6th.jpg</strong>, <strong>poster-card-6th.jpg</strong>,
+        <strong>card-6th-thumb.jpg</strong> 로 저장하여 이 HTML 파일과 같은 폴더에 두시면
+        위와 같이 정상 노출됩니다.
       </p>
     </section>
 
