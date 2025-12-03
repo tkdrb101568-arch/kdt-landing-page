@@ -1,643 +1,671 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
-    <title>K-디지털트레이닝 AI머신비전융합인재양성과정 6기 모집 (이노비즈협회)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        /* 🎨 Custom Variables (Colors based on modern KDT style & high contrast) */
-        :root {
-            --bg-main: #ffffff; /* Main White Background */
-            --bg-dark: #f0f3f8; /* Section separator background (Light Gray, High Contrast) */
-            --bg-accent: #e0edff; /* Light blue for hero background */
-            --primary-color: #1d4ed8; /* Strong Blue for main accents */
-            --accent-color: #f97316; /* Strong Orange/Highlight */
-            --text-main: #0f172a; /* Near-Black for main text */
-            --text-sub: #374151; /* Dark Gray for sub text (Improved contrast) */
-            --border-soft: #e5e7eb;
-            --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* 폰트 및 기본 설정 */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-            word-break: keep-all; /* 가독성 향상 */
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* 🚀 버튼 스타일 (CTA 강조) */
-        .btn-cta {
-            border-radius: 999px;
-            padding: 16px 35px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .btn-primary {
-            background: var(--accent-color);
-            color: #ffffff;
-            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.6);
-            border: 2px solid var(--accent-color);
-        }
-        .btn-primary:hover {
-            background: #ff8a38;
-            box-shadow: 0 12px 25px rgba(249, 115, 22, 0.8);
-            transform: translateY(-2px);
-        }
-        .btn-outline {
-            background: #ffffff;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            box-shadow: var(--shadow-light);
-        }
-        .btn-outline:hover {
-            background: var(--bg-accent);
-            transform: translateY(-1px);
-        }
+  <meta charset="UTF-8" />
+  <title>K-디지털트레이닝 AI머신비전융합인재양성과정 6기 모집</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #e0edff;
+      --accent-strong: #1d4ed8;
+      --text-main: #0f172a;
+      --text-sub: #4b5563;
+      --badge: #16a34a;
+      --border-soft: #e2e8f0;
+      --danger: #dc2626;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    header .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    header .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-primary,
+    .btn-outline {
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+    }
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: #ffffff;
+      color: var(--accent-strong);
+      border-color: var(--accent-soft);
+    }
+    .btn-outline:hover {
+      background: var(--accent-soft);
+    }
 
-        /* 🖼️ 섹션 공통 스타일 */
-        section {
-            padding: 50px 0;
-        }
-        .section-title-group {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--text-main);
-            margin-bottom: 10px;
-        }
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-sub);
-            font-weight: 500;
-        }
-        .section-subtitle strong {
-            color: var(--primary-color);
-        }
-        
-        /* 🌟 Hero Section */
-        .hero-section {
-            background: var(--bg-accent);
-            padding: 50px 0 80px; /* 제목 영역 확장 */
-            border-bottom: 5px solid var(--primary-color);
-        }
-        .top-label {
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            text-align: center;
-            display: block;
-        }
-        .hero-text h1 {
-            font-size: 3.5rem; /* 제목 크기 극대화 */
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .hero-text .highlight {
-            color: var(--accent-color);
-        }
-        .hero-sub-p {
-            font-size: 1.2rem;
-            color: var(--text-sub);
-            margin-bottom: 30px;
-            text-align: center;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .hero-meta {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            list-style: none;
-            margin-bottom: 40px;
-            padding: 0 20px;
-        }
-        .hero-meta li {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 15px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border-left: 5px solid var(--primary-color);
-            box-shadow: var(--shadow-strong);
-        }
-        .hero-meta strong {
-            display: block;
-            color: var(--primary-color);
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .hero-meta .sub-note {
-            display: block;
-            margin-top: 5px;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-        .hero-cta-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .download-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .download-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+    }
+    .download-label {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+    .download-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .download-card a {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
 
-        /* ⬇️ 자료 다운로드 섹션 (전진 배치) */
-        .download-section {
-            background: #ffffff;
-            padding: 30px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .download-card {
-            background: var(--bg-dark);
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid var(--border-soft);
-            text-align: center;
-        }
-        .download-card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 10px;
-        }
-        .download-card a {
-            display: block;
-            background: var(--primary-color);
-            color: #ffffff;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        .download-card a:hover {
-            background: #3b82f6;
-        }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr; /* 썸네일 카드 삭제로 1열 구조로 변경 */
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+    .hero-left {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 22px 22px 20px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      border: 1px solid var(--border-soft);
+    }
+    .kdt-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-strong);
+      background: #e0edff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .kdt-label span.badge {
+      background: #16a34a;
+      color: #fff;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .hero-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .hero-title span.highlight {
+      color: #f97316;
+    }
+    .hero-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .hero-badge {
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-weight: 500;
+    }
+    .hero-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+    }
+    .hero-list li {
+      margin-bottom: 4px;
+    }
+    .hero-list strong {
+      color: var(--text-main);
+    }
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--danger);
+      margin-top: 4px;
+    }
 
-        /* 🏆 차별화 포인트 (강조) */
-        .feature-section {
-            background: var(--bg-dark);
-            padding-bottom: 60px;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .feature-item {
-            background: #ffffff;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow-strong);
-            border-top: 6px solid var(--accent-color);
-            text-align: center;
-        }
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-        .feature-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 10px;
-        }
-        .feature-desc {
-            font-size: 1rem;
-            color: var(--text-sub);
-        }
-        .feature-item .strong-note {
-            display: block;
-            margin-top: 10px;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
+    section {
+      margin-bottom: 28px;
+    }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .section-title span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-strong);
+    }
+    .section-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 14px;
+    }
 
-        /* 📘 Curriculum (아이콘 및 가독성 개선) */
-        .curriculum-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .curriculum-card {
-            background: #ffffff;
-            border-radius: 12px;
-            border: 1px solid var(--border-soft);
-            padding: 20px;
-            box-shadow: var(--shadow-light);
-            border-bottom: 3px solid var(--primary-color);
-        }
-        .curriculum-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        .curriculum-card ul {
-            padding-left: 20px;
-            font-size: 0.95rem;
-            color: var(--text-sub);
-        }
-        
-        /* 🎬 Video Section Styling */
-        .video-container {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: var(--bg-dark);
-            border-radius: 15px;
-            border: 1px solid var(--border-soft);
-            box-shadow: var(--shadow-light);
-        }
-        .video-title-box {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .video-title-box h3 {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            font-weight: 800;
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            border-radius: 10px;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+    /* 훈련 정보 카드 수정 (요청 반영) */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+    .info-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 20px; /* 패딩 증가 */
+      font-size: 0.95rem; /* 글자 크기 증가 */
+      color: var(--text-sub);
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.05);
+    }
+    .info-card-title {
+      font-size: 1.1rem; /* 제목 글자 크기 증가 */
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px; /* 간격 확대 */
+    }
+    .info-card p {
+      line-height: 1.7; /* 줄 간격 확대 */
+    }
 
-        /* 🖼️ Poster Section (이미지 추가 활용) */
-        .poster-image-box {
-            margin-top: 15px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border-soft);
-            box-shadow: var(--shadow-light);
-        }
-        .poster-image-box img {
-            width: 100%;
-            display: block;
-        }
-        
-        /* FAQ Style */
-        .faq-item {
-            margin-bottom: 15px;
-            border-bottom: 1px dashed var(--border-soft);
-            padding-bottom: 10px;
-        }
-        .faq-question {
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 5px;
-        }
-        .faq-answer {
-            font-size: 0.95rem;
-            color: var(--text-sub);
-        }
 
-        /* 📱 Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-            .hero-sub-p {
-                font-size: 1rem;
-            }
-            .download-grid {
-                grid-template-columns: 1fr;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .feature-title {
-                font-size: 1.2rem;
-            }
-            .hero-meta {
-                grid-template-columns: 1fr;
-                padding: 0;
-            }
-            .video-container {
-                padding: 10px;
-            }
-        }
-    </style>
+    /* 취업 분야 시각화 카드 스타일 */
+    .job-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+    .job-card {
+        background: var(--card-bg);
+        border-radius: 14px;
+        border: 1px solid var(--border-soft);
+        padding: 20px 18px;
+        text-align: center;
+        box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+        transition: transform 0.2s;
+    }
+    .job-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+    }
+    .job-card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+    .job-card-title {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--accent-strong);
+        margin-bottom: 4px;
+    }
+    .job-card-desc {
+        font-size: 0.85rem;
+        color: var(--text-sub);
+    }
+
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+    .curriculum-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+    .curriculum-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .curriculum-card ul {
+      padding-left: 16px;
+    }
+    .curriculum-card ul li {
+      margin-bottom: 4px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .pill {
+      font-size: 0.78rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: var(--text-sub);
+    }
+
+    .faq {
+      background: var(--card-bg);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 14px 16px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+    .faq-item {
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .faq-answer {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+    }
+
+    .poster-section {
+      background: var(--card-bg);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 14px 14px 16px;
+    }
+    .poster-wrapper {
+      margin-top: 8px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+    }
+    .poster-wrapper img {
+      width: 100%;
+      display: block;
+    }
+    .poster-note {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding-top: 20px;
+      }
+      header .title {
+        font-size: 1.2rem;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-left {
+        order: 1;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="title">AI머신비전융합인재양성과정 6기 모집 랜딩페이지</div>
+        <div class="subtitle">2025.12.30. ~ 2026.05.07. · 전액 국비지원 · 취업연계형 K-디지털트레이닝</div>
+      </div>
+      <div class="cta-group">
+        <a class="btn-primary" href="https://forms.gle/YapYufhgaDJZCrkW7" target="_blank" rel="noopener">
+          지금 훈련 신청하기
+        </a>
+        <a class="btn-outline" href="tel:07040485272">
+          전화로 상담하기 (070-4048-5272)
+        </a>
+      </div>
+    </header>
 
-    <section class="hero-section">
-        <div class="container">
-            <span class="top-label">취업 연계형 K-디지털 트레이닝</span>
-            <div class="hero-text">
-                <h1>
-                    AI 머신비전 융합인재양성 **6기**<br>
-                    <span class="highlight">현장 실무형 인재</span> 544시간 집중 과정
-                </h1>
-                <p class="hero-sub-p">
-                    **2025년 마지막 국비 전액 지원**으로, 산업체 수요 기반의 AI 머신비전 핵심기술(H/W+S/W+Deep Learning)을 통합적으로 학습하여
-                    **25조 규모 스마트팩토리 산업**의 핵심 인재로 도약하세요.
-                </p>
-            </div>
-            
-            <ul class="hero-meta">
-                <li>
-                    <strong>주관 및 운영기관</strong>
-                    고용노동부 / (사)이노비즈협회 충북일자리지원센터
-                </li>
-                <li>
-                    <strong>훈련기간</strong>
-                    2025.12.30. ~ 2026.05.07. (총 544시간)
-                </li>
-                <li>
-                    <strong>훈련대상</strong>
-                    만 18세 ~ 34세 구직자 (국민내일배움카드 발급/예정자)
-                    <span class="sub-note">* 전공 상관 없이 비전공자도 가능합니다!</span>
-                </li>
-                <li>
-                    <strong>훈련장소</strong>
-                    이노비즈협회 충북지회 KHP 109호 교육장
-                    <span class="sub-note">충북 오창읍 중심상업2로 48, 충북지방중소벤처기업청 內</span>
-                </li>
-            </ul>
+    <div class="download-row">
+      <div class="download-card">
+        <div class="download-label">훈련 안내 문서</div>
+        <div class="download-name">KDT-안내장 (PDF)</div>
+        <a href="KDT-안내장.pdf" download>안내장 파일 다운로드</a>
+      </div>
+      <div class="download-card">
+        <div class="download-label">훈련 사업 소개</div>
+        <div class="download-name">KDT-사업소개서 (PPTX)</div>
+        <a href="KDT-사업소개서.pptx" download>사업소개서 파일 다운로드</a>
+      </div>
+    </div>
 
-            <div class="hero-cta-group">
-                <a class="btn-cta btn-primary" href="https://forms.gle/YapYufhgaDJZCrkW7" target="_blank" rel="noopener">
-                    지금 훈련 신청하기 (선착순 마감 임박)
-                </a>
-                <a class="btn-cta btn-outline" href="tel:07040485272">
-                    전화로 상담하기 (070-4048-5272)
-                </a>
-            </div>
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kdt-label">
+          K-디지털트레이닝 · AI머신비전전문융합인재양성과정
+          <span class="badge">6기 모집중</span>
         </div>
+        <h1 class="hero-title">
+          AI머신비전 배우면,<br />
+          취업 기회가 <span class="highlight">더블로 가는</span> 544시간
+        </h1>
+        <p class="hero-subtitle">
+          25조 규모로 성장 중인 머신비전·스마트팩토리 산업. 현장은 사람을 찾고 있지만,
+          준비된 인재는 여전히 부족합니다. 비전공자도 6기에서 제대로 준비하면
+          실제 기업 현장에서 통하는 “AI·머신비전 실무 스펙”을 만들 수 있습니다.
+        </p>
+        <div class="hero-badges">
+          <div class="hero-badge">전액 국비지원</div>
+          <div class="hero-badge">월 최대 81만원 훈련수당(국취참여시)</div>
+          <div class="hero-badge">머신비전 H/W + C# S/W + 딥러닝</div>
+          <div class="hero-badge">현장 프로젝트 & OJT</div>
+        </div>
+        <ul class="hero-list">
+          <li><strong>훈련기간</strong> : 2025.12.30. ~ 2026.05.07. (총 544시간, 월~금 10:00~17:00)</li>
+          <li><strong>훈련장소</strong> : 이노비즈협회 충북지회 KHP 교육장 109호(충북 오창)</li>
+          <li><strong>훈련대상</strong> : 만 18세 ~ 34세 미취업 청년 및 졸업(예정)자, 국민내일배움카드 발급(예정)자</li>
+          <li><strong>주관/운영</strong> : 고용노동부 · 직업능력심사평가원 / (사)이노비즈협회 충북일자리지원센터</li>
+        </ul>
+        <div class="hero-cta-row">
+          <a class="btn-primary" href="https://forms.gle/YapYufhgaDJZCrkW7" target="_blank" rel="noopener">
+            지금 훈련 신청하기
+          </a>
+          <a class="btn-outline" href="tel:07040485272">
+            전화로 상담하기
+          </a>
+        </div>
+        <div class="hero-note">
+          ※ 올해 6기까지만 전액 국비 지원 예정(차기 기수는 지원 조건 변동 가능)
+        </div>
+      </div>
     </section>
 
-    <section class="download-section">
-        <div class="container">
-            <div class="download-grid">
-                <div class="download-card">
-                    <div class="download-card-title">✅ 6기 훈련 안내장 (PDF)</div>
-                    <a href="KDT-안내장.pdf" download>안내장 파일 다운로드</a>
-                </div>
-                <div class="download-card">
-                    <div class="download-card-title">📄 사업소개서 (PDF)</div>
-                    <a href="KDT-사업소개서.pdf" download>사업소개서 파일 다운로드</a>
-                </div>
-            </div>
+    <section>
+      <h2 class="section-title"><span class="dot"></span> 이 과정 한눈에 보기</h2>
+      <p class="section-desc">
+        AI머신비전 핵심 이론부터 C# 기반 비전 S/W, 딥러닝 비전, 기업 프로젝트(OJT)까지 한 번에 배우는
+        취업연계형 장기과정입니다.
+      </p>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-title">훈련기간 · 시간</div>
+          <p>2025.12.30. ~ 2026.05.07.<br />총 544시간<br />월~금 10:00 ~ 17:00</p>
         </div>
+        <div class="info-card">
+          <div class="info-card-title">훈련장소</div>
+          <p>이노비즈협회 충북지회 KHP 109호 교육장<br />(충북 오창 중심산업로)<br />충북지방중소벤처기업청 내</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">비용 및 혜택</div>
+          <p>
+            · 교육비, 교재비 전액 국비 지원<br />
+            · 국민취업지원제도 참여 시 월 최대 81만원 훈련수당<br />
+            · 수료 후 프로젝트 포트폴리오 제공
+          </p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">주관 · 운영</div>
+          <p>
+            · 주관 : 고용노동부, 직업능력심사평가원<br />
+            · 운영 : (사)이노비즈협회 충북일자리지원센터
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="info-section">
-        <div class="container">
-            <div class="section-title-group">
-                <h2 class="section-title">AI 머신비전 6기 과정 핵심 혜택</h2>
-                <p class="section-subtitle">훈련생의 부담은 낮추고, 취업 성공률은 극대화합니다.</p>
-            </div>
-            
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">교육비 전액 국비 지원</h3>
-                    <div class="feature-desc">
-                        교육비 (500만원 상당) 및 교재비 전액을 국가가 지원합니다. 훈련생은 비용 부담 없이 학습에 집중할 수 있습니다.
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎁</div>
-                    <h3 class="feature-title">월 최대 81만원 수당</h3>
-                    <div class="feature-desc">
-                        국민취업지원제도 1유형 참여 시 최대 81만원의 훈련장려금을 받을 수 있습니다. (개인 요건 충족 시)
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🤝</div>
-                    <h3 class="feature-title">이노비즈 기업 취업 연계</h3>
-                    <div class="feature-desc">
-                        이노비즈협회 네트워크를 활용하여 전국 혁신형 중소기업 및 머신비전 관련 기업으로의 취업을 지원합니다.
-                    </div>
-                </div>
-            </div>
+    <section>
+      <h2 class="section-title"><span class="dot"></span> 머신비전이란?</h2>
+      <p class="section-desc">
+        AI 머신비전은 인간의 눈과 뇌에 해당하는 역할을 기계에 맡기는 기술입니다.
+        카메라·조명·렌즈 등 하드웨어(H/W)와, 영상을 분석하는 소프트웨어(S/W)를 결합해
+        자동으로 제품을 검사하고, 불량을 판별하고, 공정을 제어합니다.
+      </p>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-title">핵심 개념</div>
+          <p>
+            · 사람이 눈으로 보고 판단하던 공정을 기계가 대신 수행<br />
+            · 카메라·조명·렌즈·센서(H/W) + 영상처리·AI(S/W)로 구성<br />
+            · 생산라인의 품질 검사, 오류 검출, 공정 자동화에 필수
+          </p>
         </div>
+        <div class="info-card">
+          <div class="info-card-title">활용 산업</div>
+          <p>
+            반도체 · 2차전지 · 디스플레이 · 자동차 · 물류 · 스마트팩토리 · F&amp;B · 제약 ·
+            로봇 · 국방 · 항공/우주 · 의료/바이오 등 제조·첨단 산업 전반.
+          </p>
+          <div class="pill-row">
+            <span class="pill">반도체 검사</span>
+            <span class="pill">배터리 셀 검사</span>
+            <span class="pill">카메라 모듈 검사</span>
+            <span class="pill">스마트팩토리 라인 비전</span>
+          </div>
+        </div>
+      </div>
     </section>
-
-    <section class="feature-section">
-        <div class="container">
-            <div class="section-title-group">
-                <h2 class="section-title">이노비즈협회 KDT 훈련만의 3가지 차별점</h2>
-                <p class="section-subtitle">
-                    **사업소개서**에 명시된 핵심 강점 (**훈련기관 S등급**, **비전공자 높은 참여/취업률**)을 바탕으로 합니다.
-                </p>
+    
+    <section>
+        <h2 class="section-title"><span class="dot"></span> 4대 취업 분야 및 목표 직무</h2>
+        <p class="section-desc">
+            1~4기 수료생들의 취업 데이터와 기업 현장의 수요를 바탕으로, 비전공자도 진입 가능한 4대 핵심 직무를 목표로 합니다.
+            전국 이노비즈 기업 및 머신비전/자동화 관련 기업으로의 취업을 지원합니다.
+        </p>
+        <div class="job-grid">
+            <div class="job-card">
+                <img src="job-icon-1.png" alt="비전 개발자 아이콘" />
+                <div class="job-card-title">비전 개발자</div>
+                <div class="job-card-desc">C#/.NET 기반 영상처리 S/W<br /> 및 애플리케이션 개발</div>
             </div>
-
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🏅</div>
-                    <h3 class="feature-title">검증된 S등급 우수 훈련기관</h3>
-                    <div class="feature-desc">
-                        **2024년 고용노동부 훈련기관 평가 'S등급'**을 획득했습니다. (사업소개서 2p 참고)
-                        훈련의 질, 취업률, 만족도 모두 최상위 수준임을 보장합니다.
-                    </div>
-                    <span class="strong-note">→ 믿을 수 있는 기관에서 체계적인 교육 이수</span>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">👩‍💻</div>
-                    <h3 class="feature-title">비전공자 맞춤형 교육 설계</h3>
-                    <div class="feature-desc">
-                        **1~4기 수료생 중 비전공자 비율 60% 이상!** (사업소개서 3p 참고)
-                        기초 C# 코딩부터 시작해, 전공 지식 없이도 실무 역량을 갖출 수 있게 설계되었습니다.
-                    </div>
-                    <span class="strong-note">→ 이력서 한 줄을 채울 실무 포트폴리오 완성</span>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🏭</div>
-                    <h3 class="feature-title">실제 기업 연계 OJT/프로젝트</h3>
-                    <div class="feature-desc">
-                        이론과 실습을 마친 후 **참여 기업과 연계한 OJT (On-the-Job Training)**를 통해
-                        현장 실무 경험과 포트폴리오를 동시에 확보합니다.
-                    </div>
-                    <span class="strong-note">→ 취업 직무 만족도 높은 정규직 전환 기회</span>
-                </div>
+            <div class="job-card">
+                <img src="job-icon-2.png" alt="머신비전 S/W 엔지니어 아이콘" />
+                <div class="job-card-title">머신비전 S/W 엔지니어</div>
+                <div class="job-card-desc">AI/딥러닝 기반 불량 판별 시스템<br /> 구축 및 유지보수</div>
+            </div>
+            <div class="job-card">
+                <img src="job-icon-3.png" alt="머신비전 H/W 엔지니어 아이콘" />
+                <div class="job-card-title">머신비전 H/W 엔지니어</div>
+                <div class="job-card-desc">카메라, 조명, 렌즈 등 광학<br /> H/W 시스템 설계 및 셋업</div>
+            </div>
+            <div class="job-card">
+                <img src="job-icon-4.png" alt="머신비전 관련 전분야 아이콘" />
+                <div class="job-card-title">머신비전 관련 전분야</div>
+                <div class="job-card-desc">기술지원, 기술연구원 등<br /> 머신비전 산업 전반 직무</div>
             </div>
         </div>
     </section>
     
     <section>
-        <div class="container">
-            <div class="section-title-group">
-                <h2 class="section-title">세부 커리큘럼: 무엇을 배우고, 어디로 취업하나요?</h2>
-                <p class="section-subtitle">
-                    AI 머신비전 핵심기술 **4가지 축**을 중심으로 544시간 동안 집중 학습합니다.
-                </p>
-            </div>
-
-            <div class="curriculum-grid">
-                <div class="curriculum-card">
-                    <h3>1. 머신비전 H/W · 광학</h3>
-                    <ul>
-                        <li>빛의 원리, 렌즈 공식, 조명 종류 및 선택법</li>
-                        <li>카메라·센서 구조, 인터페이스 이해</li>
-                        <li>스마트팩토리 라인 비전 H/W 설계 관점</li>
-                    </ul>
-                </div>
-                <div class="curriculum-card">
-                    <h3>2. C# 기반 비전 S/W &amp; 영상처리</h3>
-                    <ul>
-                        <li>C# 기초 문법, WinForm UI, Git 사용법</li>
-                        <li>OpenCV 기초, Blob 검출 등 영상처리 실습</li>
-                        <li>비전 PC 기반 검사 프로그램 미니 프로젝트</li>
-                    </ul>
-                </div>
-                <div class="curriculum-card">
-                    <h3>3. AI · 딥러닝 비전</h3>
-                    <ul>
-                        <li>딥러닝 기본 이론(Classification, Detection)</li>
-                        <li>VISION SDK 및 AI 모델을 활용한 불량 판별</li>
-                        <li>OCR, 이상탐지(IAD), 생성모델 실습</li>
-                    </ul>
-                </div>
-                <div class="curriculum-card">
-                    <h3>4. 프로젝트 &amp; 취업 연계</h3>
-                    <ul>
-                        <li>팀 프로젝트로 머신비전 애플리케이션 개발</li>
-                        <li>참여기업과 연계한 OJT·기업실습</li>
-                        <li>**취업클리닉, 포트폴리오 제작, 면접 코칭**</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="video-container">
-                <div class="video-title-box">
-                    <h3>📝 훈련 커리큘럼 핵심 내용 미리보기 (영상)</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-sub);">
-                        AI 머신비전 과정의 주요 학습 내용과 실습 환경을 1분 영상으로 확인해 보세요.
-                    </p>
-                </div>
-                <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=73mK_c72pL7u9b_i" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen
-                    ></iframe>
-                    </div>
-            </div>
-            <div class="section-title-group" style="margin-top:50px;">
-                <h3 class="section-title" style="font-size:1.5rem;">[취업 분야] 비전 개발자, 머신비전 S/W 엔지니어, H/W 엔지니어</h3>
-                <p class="section-subtitle">
-                    (사업소개서 6p 참고) 실제 **행정학과, 문헌정보학과 등 비전공자**도 훈련을 통해 **정규직 머신비전 엔지니어**로 취업했습니다.
-                </p>
-            </div>
+      <h2 class="section-title"><span class="dot"></span> 무엇을 배우나요? (커리큘럼 4개 축)</h2>
+      <p class="section-desc">
+        단순 이론 암기가 아닌, 실습 위주의 커리큘럼으로 구성되어 있습니다.
+        아래 4개 축을 기준으로, 총 544시간 동안 단계적으로 실력을 끌어올립니다.
+      </p>
+      <div class="curriculum-grid">
+        <div class="curriculum-card">
+          <h3>1. 머신비전 H/W · 광학 · 전자</h3>
+          <ul>
+            <li>빛의 원리, 렌즈 공식, 조명 종류 및 선택법</li>
+            <li>카메라·센서 구조, 프레임그래버, 인터페이스 이해</li>
+            <li>조명 컨트롤러, 각종 센서 및 제어 실습</li>
+            <li>스마트팩토리 라인에서의 비전 H/W 설계 관점</li>
+          </ul>
         </div>
+        <div class="curriculum-card">
+          <h3>2. C# 기반 비전 S/W &amp; 영상처리</h3>
+          <ul>
+            <li>C# 기초 문법, WinForm UI, Git 사용법</li>
+            <li>OpenCV 기초, Blob 검출 등 영상처리 이론·실습</li>
+            <li>EyeVision 등 비전 툴을 활용한 2D 인스펙션</li>
+            <li>비전 PC 기반 검사 프로그램 미니 프로젝트</li>
+          </ul>
+        </div>
+        <div class="curriculum-card">
+          <h3>3. AI · 딥러닝 비전</h3>
+          <ul>
+            <li>딥러닝 기본 이론(Classification, Detection, Segmentation)</li>
+            <li>OCR, 이상탐지(IAD), 생성모델 등 비전 특화 모델 실습</li>
+            <li>VISION SDK 및 AI 모델을 활용한 불량 판별 프로젝트</li>
+          </ul>
+        </div>
+        <div class="curriculum-card">
+          <h3>4. 프로젝트 학습 &amp; 기업 OJT</h3>
+          <ul>
+            <li>팀 프로젝트로 머신비전 애플리케이션 개발</li>
+            <li>참여기업과 연계한 OJT·기업실습 프로젝트</li>
+            <li>취업클리닉, 이력서·포트폴리오·면접 코칭</li>
+            <li>최종 포트폴리오 제작 및 발표</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section class="feature-section">
-        <div class="container">
-            <div class="section-title-group">
-                <h2 class="section-title">자주 묻는 질문 및 공식 홍보 자료</h2>
-            </div>
-            
-            <div style="display:grid; grid-template-columns: 2fr 1fr; gap:30px;">
-                <div>
-                    <h3 style="font-size:1.2rem; margin-bottom:15px; color:var(--primary-color);">자주 묻는 질문 (FAQ)</h3>
-                    <div class="faq-item">
-                        <div class="faq-question">Q. 비전공자도 지원할 수 있나요?</div>
-                        <div class="faq-answer">네, 가능합니다. **1~4기 비전공자 비율 60% 이상**이며, 기초 C# 코딩부터 단계적으로 진행합니다.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q. 훈련비와 수당은 어떻게 되나요?</div>
-                        <div class="faq-answer">교육비·교재비는 **전액 국비 지원**이며, 국민취업지원제도 참여 시 월 최대 81만원까지 훈련수당을 받을 수 있습니다.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q. 훈련과정이 오프라인인가요?</div>
-                        <div class="faq-answer">네, 취업 연계 및 실습 효율을 위해 **오창 교육장에서 진행하는 오프라인 대면 훈련**입니다.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q. 신청은 어떻게 하나요?</div>
-                        <div class="faq-answer">상단의 “지금 훈련 신청하기” 버튼을 통해 구글폼을 작성해 주시면, 담당자가 순차적으로 연락을 드려 일정 및 세부 안내를 드립니다.</div>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="font-size:1.2rem; margin-bottom:15px; color:var(--primary-color);">공식 모집 포스터 (확대)</h3>
-                    <div class="poster-image-box">
-                        <img src="poster-main-6th.jpg"
-                             alt="AI·머신비전 핵심훈련 6기 공식 모집 포스터" />
-                    </div>
-                    <p style="font-size:0.85rem; color:var(--text-sub); margin-top:10px;">
-                        학교 게시판 및 기관 안내문에 부착하는 메인 포스터입니다.<br>
-                        (파일명: **poster-main-6th.jpg** / **card-6th-thumb.jpg**와 함께 업로드 필요)
-                    </p>
-                </div>
-            </div>
+    <section>
+      <h2 class="section-title"><span class="dot"></span> 자주 묻는 질문 (FAQ)</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question">Q. 비전공자도 지원할 수 있나요?</div>
+          <div class="faq-answer">
+            네, 가능합니다. 실제 수료생 상당수가 비전공자이며, 기초 프로그래밍부터 단계적으로 진행합니다.
+          </div>
         </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. 어느 기업으로 보통 취업을 하나요?</div>
+          <div class="faq-answer">
+            전국에 있는 이노비즈 기업 및 머신비전·스마트팩토리·자동화 관련 기업으로 취업을 목표로 합니다.
+            실제로 머신비전 전문기업, 자동화 시스템 기업, 스마트팩토리 솔루션 기업 등으로 취업 사례가 있습니다.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. 코딩을 거의 안 해봤는데 따라갈 수 있을까요?</div>
+          <div class="faq-answer">
+            C# 기초 문법부터 시작해 예제 실습 → 미니 프로젝트 → 팀 프로젝트 순으로 진행합니다.
+            매일 실습 위주로 진행되며, 난이도는 점진적으로 올라가도록 설계되어 있습니다.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. 훈련비와 수당은 어떻게 되나요?</div>
+          <div class="faq-answer">
+            교육비·교재비는 전액 국비 지원이며, 국민취업지원제도 참여 시 월 최대 81만원까지 훈련수당을 받을 수 있습니다
+            (개인별 지원요건 충족 여부에 따라 상이할 수 있습니다).
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. 신청은 어떻게 하나요?</div>
+          <div class="faq-answer">
+            상단의 “지금 훈련 신청하기” 버튼을 통해 구글폼을 작성해 주시면,
+            담당자가 순차적으로 연락을 드려 일정 및 세부 안내를 드립니다.
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section style="background:var(--accent-color); text-align:center; padding:50px 0;">
-        <div class="container">
-            <h2 style="color:#ffffff; font-size:2rem; font-weight:900; margin-bottom:25px;">
-                2025년 마지막 국비 지원 기회, 망설이지 말고 지금 바로 신청하세요!
-            </h2>
-             <a class="btn-cta btn-primary" href="https://forms.gle/YapYufhgaDJZCrkW7" target="_blank" rel="noopener" style="background:#ffffff; border-color:#ffffff; color:var(--accent-color); box-shadow:0 12px 30px rgba(255, 255, 255, 0.4);">
-                🚀 6기 훈련 신청 바로가기 (구글폼 작성)
-            </a>
-            <p style="color:#ffffff; margin-top:15px; font-size:1rem;">
-                선착순 모집 마감 예정! 전화 상담: 070-4048-5272
-            </p>
-        </div>
+    <section class="poster-section">
+      <h2 class="section-title"><span class="dot"></span> AI·머신비전 핵심훈련 6기 모집 포스터 보기</h2>
+      <p class="section-desc">
+        온·오프라인 홍보에 사용 중인 공식 포스터를 랜딩페이지에서도 그대로 확인할 수 있도록 구성했습니다.
+      </p>
+      <div class="poster-wrapper">
+        <img src="poster-6th.jpg" alt="AI·머신비전 핵심훈련 무료 취업훈련생 6기 모집 포스터" />
+      </div>
+      <p class="poster-note">
+        ※ 포스터 이미지는 <strong>poster-6th.jpg</strong> 파일명으로 랜딩페이지 HTML과 같은 폴더에 두시면
+        위와 같이 표시됩니다.
+      </p>
     </section>
 
     <footer>
-        <div class="container">
-            본 랜딩페이지는 (사)이노비즈협회 충북일자리지원센터 AI머신비전융합인재양성과정 6기 홍보용으로 제작되었습니다.<br>
-            문의: 070-4048-5272
-        </div>
+      본 랜딩페이지는 (사)이노비즈협회 충북일자리지원센터 AI머신비전융합인재양성과정 6기 홍보용으로 제작되었습니다.
     </footer>
+  </div>
 </body>
 </html>
