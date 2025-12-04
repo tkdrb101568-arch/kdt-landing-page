@@ -285,7 +285,7 @@
             font-weight: bold; font-size: 1.2rem;
         }
 
-        /* 🎬 Video Section */
+        /* 🎬 Media Section */
         .video-container {
             margin-top: 60px;
             background: var(--color-bg-dark);
@@ -295,12 +295,20 @@
             color: #fff;
         }
         .video-title { color: #fff; font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
-        .video-wrapper {
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-            max-width: 900px; margin: 30px auto 0;
-            border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 900px;
+            margin: 30px auto 0;
         }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .video-item img,
+        .video-item video {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            background: #000;
+        }
 
         /* 🎓 Job Fields (4 Icons Grid) */
         .job-grid {
@@ -359,6 +367,7 @@
             .curriculum-grid-2x2 { grid-template-columns: 1fr; } /* 모바일에서 1줄로 */
             .job-grid { grid-template-columns: repeat(2, 1fr); } /* 모바일에서 2줄로 */
             .video-container { padding: 30px 20px; }
+            .video-grid { grid-template-columns: 1fr; }
             .btn { width: 100%; }
         }
     </style>
@@ -561,12 +570,22 @@
             </div>
 
             <div class="video-container">
-                <div class="video-title">📝 1분 미리보기: 훈련생 프로젝트 결과물</div>
-                <p style="color: #ccc; margin-bottom: 30px;">실제 훈련생들의 프로젝트 결과물을 영상으로 확인하세요.(비전공자 포함) </p>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <div class="video-title">📝 훈련생 프로젝트 결과물 미리보기</div>
+                <p style="color: #ccc; margin-bottom: 30px;">
+                    AI머신비전융합인재양성과정 4기 2조 작품(비전공자 포함)
+                </p>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <!-- 실습 사진 (jpg) -->
+                        <img src="20251203_172945.jpg" alt="AI 머신비전 실습 현장 사진">
+                    </div>
+                    <div class="video-item">
+                        <!-- 로컬 mp4 동영상 -->
+                        <video src="미디어1.mp4" controls preload="metadata"></video>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
