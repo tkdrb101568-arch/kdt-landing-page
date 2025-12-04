@@ -358,6 +358,14 @@
             line-height: 1.7;
         }
 
+        /* 🚀 New Prospect Section Layout */
+        .prospect-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
         /* 📱 Mobile Responsive */
         @media (max-width: 768px) {
             .hero-title { font-size: 2.3rem; }
@@ -365,6 +373,7 @@
             .hero-meta-item { padding: 20px; }
             .meta-content { font-size: 1rem; }
             .curriculum-grid-2x2 { grid-template-columns: 1fr; } /* 모바일에서 1줄로 */
+            .prospect-grid { grid-template-columns: 1fr; } /* 추가: 모바일에서 1줄로 */
             .job-grid { grid-template-columns: repeat(2, 1fr); } /* 모바일에서 2줄로 */
             .video-container { padding: 30px 20px; }
             .video-grid { grid-template-columns: 1fr; }
@@ -444,6 +453,55 @@
         </div>
     </section>
 
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🚀 <span class="text-accent">AI 머신비전</span>, 놓칠 수 없는 산업 전망</h2>
+                <p class="section-subtitle">4차 산업혁명의 핵심 동력, 미래 유망 산업의 중심에서 커리어를 시작하세요.</p>
+            </div>
+
+            <div class="prospect-grid">
+                <div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: var(--color-primary);">
+                        [필수 시청] 국내외 머신비전 산업 동향
+                    </h3>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-hover);">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID" 
+                            title="AI 머신비전 산업 동영상" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                        * 'YOUR_YOUTUBE_ID' 부분에 실제 유튜브 영상 ID를 넣어주세요.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.8rem; font-weight: 800; margin-top: 5px; margin-bottom: 25px; color: var(--color-text-title);">
+                        <span class="text-primary">머신비전 전문가</span>의 경쟁력
+                    </h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 20px; padding-left: 0;">
+                            <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-accent);">1. 25조 규모의 유망 산업:</span>
+                            <p style="margin-top: 5px; color: var(--color-text-body);">스마트팩토리 산업의 고속 성장에 따라, 제품 불량률 0%에 도전하는 머신비전 기술은 필수 요소이며 시장 규모가 지속적으로 확대되고 있습니다.</p>
+                        </li>
+                        <li style="margin-bottom: 20px; padding-left: 0;">
+                            <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-accent);">2. 전 산업 분야의 높은 활용성:</span>
+                            <p style="margin-top: 5px; color: var(--color-text-body);">반도체, 2차 전지, 디스플레이, 자동차, 바이오 등 첨단 제조 분야를 비롯해 다양한 산업군에서 검사/측정/분류 자동화에 활용되어 수요가 폭발적입니다.</p>
+                        </li>
+                        <li style="margin-bottom: 20px; padding-left: 0;">
+                            <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-accent);">3. 기업의 적극적인 인재 확보:</span>
+                            <p style="margin-top: 5px; color: var(--color-text-body);">머신비전 기술 인력의 희소성으로 인해 우수 기업들이 높은 연봉과 복리후생을 제시하며 적극적으로 신입/경력 인재를 채용하고 있습니다.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="bg-light">
         <div class="container">
             <div class="section-header">
@@ -570,23 +628,20 @@
             </div>
 
             <div class="video-container">
-                <div class="video-title">📝 훈련생 프로젝트 결과물 미리보기</div>
+                <div class="video-title">📝 실습 현장 & 프로젝트 미리보기</div>
                 <p style="color: #ccc; margin-bottom: 30px;">
-                    AI머신비전융합인재양성과정 4기 2조 작품(비전공자 포함)
+                    실제 강의실 분위기와 훈련 프로젝트 진행 모습을 사진과 영상으로 확인해 보세요.
                 </p>
                 <div class="video-grid">
                     <div class="video-item">
-                        <!-- 실습 사진 (jpg) -->
                         <img src="20251203_172945.jpg" alt="AI 머신비전 실습 현장 사진">
                     </div>
                     <div class="video-item">
-                        <!-- 로컬 mp4 동영상 -->
                         <video src="미디어1.mp4" controls preload="metadata"></video>
                     </div>
                 </div>
             </div>
-
-        </div>
+            </div>
     </section>
 
     <section>
